@@ -2,7 +2,11 @@
 
 Supplementary material to the paper. Includes datasets, charts and additional code.
 
-The experiments were conducted using [Sinergym](https://github.com/ugr-sail/sinergym).
+The experiments were conducted using [Sinergym](https://github.com/ugr-sail/sinergym), a framework for building energy simulation.
+
+## 📖 Abstract
+
+...
 
 ## 👥 Contributors
 
@@ -12,6 +16,10 @@ The experiments were conducted using [Sinergym](https://github.com/ugr-sail/sine
 * [Miguel Molina-Solana](miguelmolina@ugr.es)
 * [Juan Gómez-Romero](jgomez@decsai.ugr.es)
 
+_Department of Computer Science and Artificial Intelligence_ ([DECSAI](https://decsai.ugr.es/)), Universidad de Granada, Spain.
+
+_Sustainable Artificial Intelligence Lab_ ([SAIL](https://wpd.ugr.es/~sail/)).
+
 ## 📝 Citation
 
 ```
@@ -20,7 +28,7 @@ The experiments were conducted using [Sinergym](https://github.com/ugr-sail/sine
 
 ## 📄 License
 
-Check [LICENSE](https://github.com/ugr-sail/paper-drl_building/blob/main/LICENSE).
+Read [LICENSE](https://github.com/ugr-sail/paper-drl_building/blob/main/LICENSE).
 
 ## 🪙 Funding
 
