@@ -10,11 +10,11 @@ The experiments were conducted using [Sinergym](https://github.com/ugr-sail/sine
 
 ## 👥 Contributors
 
-* [Antonio Manjavacas](manjavacas@ugr.es)
-* [Alejandro Campoy-Nieves](alejandroac79@correo.ugr.es)
-* [Javier Jiménez-Raboso](javi.j21@gmail.com)
-* [Miguel Molina-Solana](miguelmolina@ugr.es)
-* [Juan Gómez-Romero](jgomez@decsai.ugr.es)
+* [Antonio Manjavacas](mailto:manjavacas@ugr.es)
+* [Alejandro Campoy-Nieves](mailto:alejandroac79@correo.ugr.es)
+* [Javier Jiménez-Raboso](mailto:javi.j21@gmail.com)
+* [Miguel Molina-Solana](mailto:miguelmolina@ugr.es)
+* [Juan Gómez-Romero](mailto:jgomez@decsai.ugr.es)
 
 _Department of Computer Science and Artificial Intelligence_ ([DECSAI](https://decsai.ugr.es/)), Universidad de Granada, Spain.
 
