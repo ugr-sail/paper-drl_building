@@ -1,0 +1,96 @@
+Program Version,EnergyPlus, Version 9.5.0-de239b2e5f, YMD=2022.06.28 12:39,
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** RunPeriod: object=RUNPERIOD 1, start weekday (MONDAY) does not match the start year (1991), corrected to TUESDAY.
+   ** Warning ** Calculated design heating load for zone=WEST ZONE is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=EAST ZONE is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ************* Beginning System Sizing Calculations
+   ************* Beginning Plant Sizing Calculations
+   ** Warning ** SizeWaterCoil: Coil="WEST ZONE CW COOLING COIL", Cooling Coil has leaving humidity ratio > entering humidity ratio.
+   **   ~~~   **     Wair,in =  8.407078E-003 [kgWater/kgDryAir]
+   **   ~~~   **     Wair,out = 8.500000E-003 [kgWater/kgDryAir]
+   **   ~~~   ** ....coil leaving humidity ratio will be reset to:
+   **   ~~~   **     Wair,out = 8.407078E-003 [kgWater/kgDryAir]
+   ** Warning ** SizeWaterCoil: Coil="EAST ZONE CW COOLING COIL", Cooling Coil has leaving humidity ratio > entering humidity ratio.
+   **   ~~~   **     Wair,in =  8.407078E-003 [kgWater/kgDryAir]
+   **   ~~~   **     Wair,out = 9.000000E-003 [kgWater/kgDryAir]
+   **   ~~~   ** ....coil leaving humidity ratio will be reset to:
+   **   ~~~   **     Wair,out = 8.407078E-003 [kgWater/kgDryAir]
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Tower range temperature is outside model boundaries at 5.28E-003.
+   **   ~~~   **  ...Valid range = 1.11 to 22.22. Occurrence info = RUNPERIOD 1, 01/01 00:00 - 00:03
+   **   ~~~   **  ...Tower range temperature passed to the model = 5.28245E-003
+   **   ~~~   **  ...Range temperatures outside model boundaries may not adversely affect tower performance.
+   **   ~~~   **  ...This is not an unexpected occurrence when simulating actual conditions.
+   ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Tower approach temperature is outside model boundaries at 0.88.
+   **   ~~~   **  ...Valid range = 1.11 to 40.00. Occurrence info = RUNPERIOD 1, 01/17 06:15 - 06:17
+   **   ~~~   **  ...Tower approach temperature passed to the model = 0.88390
+   **   ~~~   **  ...Approach temperatures outside model boundaries may not adversely affect tower performance.
+   **   ~~~   **  ...This is not an unexpected occurrence when simulating actual conditions.
+   ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed "WEST DX COOLING COIL" - Full load outlet air dry-bulb temperature < 2C. This indicates the possibility of coil frost/freeze. Outlet temperature = -1.37 C.
+   **   ~~~   **  ...Occurrence info = RUNPERIOD 1, 01/17 10:16 - 10:17
+   **   ~~~   ** ... Possible reasons for low outlet air dry-bulb temperatures are: This DX coil
+   **   ~~~   **    1) may have a low inlet air dry-bulb temperature. Inlet air temperature = 12.624 C.
+   **   ~~~   **    2) may have a low air flow rate per watt of cooling capacity. Check inputs.
+   **   ~~~   **    3) is used as part of a HX assisted cooling coil which uses a high sensible effectiveness. Check inputs.
+   ** Severe  ** CalcIndirectResearchSpecialEvapCooler: calculate secondary air mass flow failed for Indirect Evaporative Cooler Research Special = EAST DATA CENTER IEC
+   **   ~~~   **  Environment=RUNPERIOD 1, at Simulation time=01/17 12:25 - 12:30
+   **   ~~~   **   Iteration limit [500] exceeded in calculating secondary air mass flow rate
+   **   ~~~   **   Simulation continues
+   ** Severe  ** CalcIndirectResearchSpecialEvapCooler: calculate secondary air mass flow failed for Indirect Evaporative Cooler Research Special = WEST DATA CENTER IEC
+   **   ~~~   **  Environment=RUNPERIOD 1, at Simulation time=03/28 10:00 - 10:08
+   **   ~~~   **   Iteration limit [500] exceeded in calculating secondary air mass flow rate
+   **   ~~~   **   Simulation continues
+   ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Cooling tower air flow rate ratio calculation failed 
+   **   ~~~   ** ...with conditions as Twb =  8.70, Trange =  0.08, Tapproach =  1.30, and water flow rate ratio =  1.01
+   **   ~~~   ** ...a solution could not be found within the valid range of air flow rate ratios
+   **   ~~~   **  ...Valid air flow rate ratio range =  0.20 to 1.0.
+   **   ~~~   **  Environment=RUNPERIOD 1, at Simulation time=10/01 09:25 - 09:30
+   **   ~~~   ** ...Consider modifying the design approach or design range temperature for this tower.
+   ** Severe  ** ExternalInterface: Received end of simulation flag at time = 8760.00 hours.
+   ************* Simulation Error Summary *************
+   ************* There are 1 unused schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Recurring Error Summary =====
+   ************* The following recurring error messages occurred.
+   *************
+   *************  ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Tower range temperature is out of range error continues...
+   *************  **   ~~~   **   This error occurred 15823 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=1.111092  Min=2.841284E-005
+   *************
+   *************  ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Tower approach temperature is out of range error continues...
+   *************  **   ~~~   **   This error occurred 23641 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=1.109699  Min=0.
+   *************
+   *************  ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed="WEST DX COOLING COIL" - Full load outlet temperature indicates a possibility of frost/freeze error continues. Outlet air temperature statistics follow:
+   *************  **   ~~~   **   This error occurred 58 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=1.985894  Min=-1.365767
+   *************
+   *************  ** Warning ** Secondary air mass flow Iteration limit exceeded in Indirect Evaporative Cooler Research Special = EAST DATA CENTER IEC
+   *************  **   ~~~   **   This error occurred 672 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************
+   *************  ** Warning ** Secondary air mass flow Iteration limit exceeded in Indirect Evaporative Cooler Research Special = WEST DATA CENTER IEC
+   *************  **   ~~~   **   This error occurred 385 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 3 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 40587 Warning; 3 Severe Errors; Elapsed Time=00hr 01min  3.07sec

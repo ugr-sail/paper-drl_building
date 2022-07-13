@@ -1,0 +1,117 @@
+Program Version,EnergyPlus, Version 9.5.0-de239b2e5f, YMD=2022.05.13 18:05,
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** RunPeriod: object=RUNPERIOD 1, start weekday (MONDAY) does not match the start year (1991), corrected to TUESDAY.
+   ** Warning ** Calculated design heating load for zone=EAST ZONE is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=WEST ZONE is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ************* Beginning System Sizing Calculations
+   ************* Beginning Plant Sizing Calculations
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Tower range temperature is outside model boundaries at 1.00E-002.
+   **   ~~~   **  ...Valid range = 1.11 to 22.22. Occurrence info = RUNPERIOD 1, 01/02 03:05 - 03:06
+   **   ~~~   **  ...Tower range temperature passed to the model = 1.00498E-002
+   **   ~~~   **  ...Range temperatures outside model boundaries may not adversely affect tower performance.
+   **   ~~~   **  ...This is not an unexpected occurrence when simulating actual conditions.
+   ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Tower approach temperature is outside model boundaries at 0.91.
+   **   ~~~   **  ...Valid range = 1.11 to 40.00. Occurrence info = RUNPERIOD 1, 01/03 10:00 - 10:01
+   **   ~~~   **  ...Tower approach temperature passed to the model = 0.90716
+   **   ~~~   **  ...Approach temperatures outside model boundaries may not adversely affect tower performance.
+   **   ~~~   **  ...This is not an unexpected occurrence when simulating actual conditions.
+   ** Severe  ** CalcIndirectResearchSpecialEvapCooler: calculate secondary air mass flow failed for Indirect Evaporative Cooler Research Special = EAST DATA CENTER IEC
+   **   ~~~   **  Environment=RUNPERIOD 1, at Simulation time=04/06 08:06 - 08:09
+   **   ~~~   **   Iteration limit [500] exceeded in calculating secondary air mass flow rate
+   **   ~~~   **   Simulation continues
+   ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed "WEST DX COOLING COIL" - Full load outlet air dry-bulb temperature < 2C. This indicates the possibility of coil frost/freeze. Outlet temperature = 1.78 C.
+   **   ~~~   **  ...Occurrence info = RUNPERIOD 1, 04/07 08:00 - 08:02
+   **   ~~~   ** ... Possible reasons for low outlet air dry-bulb temperatures are: This DX coil
+   **   ~~~   **    1) may have a low inlet air dry-bulb temperature. Inlet air temperature = 12.845 C.
+   **   ~~~   **    2) may have a low air flow rate per watt of cooling capacity. Check inputs.
+   **   ~~~   **    3) is used as part of a HX assisted cooling coil which uses a high sensible effectiveness. Check inputs.
+   ** Severe  ** CalcIndirectResearchSpecialEvapCooler: calculate secondary air mass flow failed for Indirect Evaporative Cooler Research Special = WEST DATA CENTER IEC
+   **   ~~~   **  Environment=RUNPERIOD 1, at Simulation time=04/09 18:08 - 18:10
+   **   ~~~   **   Iteration limit [500] exceeded in calculating secondary air mass flow rate
+   **   ~~~   **   Simulation continues
+   ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed="WEST DX COOLING COIL" - Air volume flow rate per watt of rated total cooling capacity is out of range at 2.630E-005 m3/s/W.
+   **   ~~~   **  Environment=RUNPERIOD 1, at Simulation time=07/04 08:16 - 08:18
+   **   ~~~   ** Expected range for VolumeFlowPerRatedTotalCapacity=[2.684E-005--6.713E-005]
+   **   ~~~   ** Possible causes include inconsistent air flow rates in system components,
+   **   ~~~   ** or variable air volume [VAV] system using incorrect coil type.
+   ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Inlet air wet-bulb temperature is outside model boundaries at 26.69.
+   **   ~~~   **  ...Valid range = -34.40 to 26.67. Occurrence info = RUNPERIOD 1, 07/07 01:45 - 02:00
+   **   ~~~   **  ...Inlet air wet-bulb temperature passed to the model = 26.666700
+   **   ~~~   **  ...Wet-bulb temperatures outside model boundaries may not adversely affect tower performance.
+   ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Inlet air wet-bulb temperature is outside model boundaries at 26.69.
+   **   ~~~   **  ...Valid range = -34.40 to 26.67. Occurrence info = RUNPERIOD 1, 07/19 20:30 - 20:45
+   **   ~~~   **  ...Inlet air wet-bulb temperature passed to the model = 26.666700
+   **   ~~~   **  ...Wet-bulb temperatures outside model boundaries may not adversely affect tower performance.
+   ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Inlet air wet-bulb temperature is outside model boundaries at 27.03.
+   **   ~~~   **  ...Valid range = -34.40 to 26.67. Occurrence info = RUNPERIOD 1, 07/19 20:45 - 21:00
+   **   ~~~   **  ...Inlet air wet-bulb temperature passed to the model = 26.666700
+   **   ~~~   **  ...Wet-bulb temperatures outside model boundaries may not adversely affect tower performance.
+   ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Inlet air wet-bulb temperature is outside model boundaries at 26.99.
+   **   ~~~   **  ...Valid range = -34.40 to 26.67. Occurrence info = RUNPERIOD 1, 07/19 21:00 - 21:15
+   **   ~~~   **  ...Inlet air wet-bulb temperature passed to the model = 26.666700
+   **   ~~~   **  ...Wet-bulb temperatures outside model boundaries may not adversely affect tower performance.
+   ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Inlet air wet-bulb temperature is outside model boundaries at 26.95.
+   **   ~~~   **  ...Valid range = -34.40 to 26.67. Occurrence info = RUNPERIOD 1, 07/19 21:15 - 21:30
+   **   ~~~   **  ...Inlet air wet-bulb temperature passed to the model = 26.666700
+   **   ~~~   **  ...Wet-bulb temperatures outside model boundaries may not adversely affect tower performance.
+   ** Severe  ** ExternalInterface: Received end of simulation flag at time = 8760.00 hours.
+   ************* Simulation Error Summary *************
+   ************* There are 1 unused schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Recurring Error Summary =====
+   ************* The following recurring error messages occurred.
+   *************
+   *************  ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Tower range temperature is out of range error continues...
+   *************  **   ~~~   **   This error occurred 30149 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=1.111096  Min=1.104761E-005
+   *************
+   *************  ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Tower approach temperature is out of range error continues...
+   *************  **   ~~~   **   This error occurred 40761 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=1.104967  Min=0.
+   *************
+   *************  ** Warning ** Secondary air mass flow Iteration limit exceeded in Indirect Evaporative Cooler Research Special = EAST DATA CENTER IEC
+   *************  **   ~~~   **   This error occurred 95 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************
+   *************  ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed="WEST DX COOLING COIL" - Full load outlet temperature indicates a possibility of frost/freeze error continues. Outlet air temperature statistics follow:
+   *************  **   ~~~   **   This error occurred 219 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=1.963413  Min=-6.122684
+   *************
+   *************  ** Warning ** Secondary air mass flow Iteration limit exceeded in Indirect Evaporative Cooler Research Special = WEST DATA CENTER IEC
+   *************  **   ~~~   **   This error occurred 46 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************
+   *************  ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed="WEST DX COOLING COIL" - Air volume flow rate per watt of rated total cooling capacity is out of range error continues...
+   *************  **   ~~~   **   This error occurred 12 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=2.679264E-005  Min=2.600074E-005
+   *************
+   *************  ** Warning ** CoolingTower:VariableSpeed "COOLING TOWER" - Inlet air wet-bulb temperature is out of range error continues...
+   *************  **   ~~~   **   This error occurred 39 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=27.224319  Min=26.668472
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 3 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 71331 Warning; 3 Severe Errors; Elapsed Time=00hr 01min 11.56sec
