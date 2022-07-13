@@ -1,8 +1,17 @@
+############################################################################################
+##                                                                                        ##
+##  An experimental evaluation of Deep Reinforcement Learning algorithms for HVAC control ##
+##                                                                                        ##
+##  Authors: A. Manjavacas, A. Campoy, J. Jimenez, M. Molina, J. Gomez                    ##
+##                                                                                        ##
+##  Copyright (c) Antonio Manjavacas, 2022                                                ##
+##  Contact: manjavacas@ugr.es                                                            ##
+##                                                                                        ##
+############################################################################################
+
 library(readr)
 library(ggplot2)
 library(tidyverse)
-library(reshape2)
-library(ggpubr)
 
 Sys.setlocale('LC_TIME', 'C')
 
@@ -328,7 +337,6 @@ plot_temperatures_5Zone <- function(df) {
       )
     )
 }
-
 get_comf_viol_5Zone <- function(df) {
   df %>%
     mutate(comfort_violation = ifelse(
@@ -430,7 +438,7 @@ plot_comf_viol_datacenter <- function(df) {
   # + labs(fill = '', title = 'Comfort temperature violations', subtitle = '2ZoneDataCenterHVAC - 20 episodes')
 }
 
-################################## TRAIN  ##################################
+########################################## TRAIN  ##########################################
 
 ## Load data
 
@@ -550,7 +558,7 @@ ggsave(
   height = 1150
 )
 
-################################## EVALUATION ##################################
+######################################## EVALUATION ########################################
 
 ## Load data
 
@@ -758,7 +766,7 @@ ggsave(
   height = 1710
 )
 
-############################## ROBUSTNESS TESTS ##############################
+##################################### ROBUSTNESS TESTS #####################################
 
 ## Load data
 
@@ -880,7 +888,7 @@ ggsave(
 df_robustness_all %>% group_by(Train, Test) %>% summarise(mean = mean(`Mean reward`), sd =
                                                             sd(`Mean reward`))
 
-################################# CV LEARNING #################################
+####################################### CV LEARNING ######################################## 
 
 ## Load data
 
@@ -919,7 +927,7 @@ ggsave(
   height = 1930
 )
 
-######################### COMFORT-CONSUMPTION TRADE-OFF #########################
+############################## COMFORT-CONSUMPTION TRADE-OFF ############################### 
 
 ## Load data
 
@@ -1067,7 +1075,12 @@ ggsave(
   height = 1890
 )
 
-######################### ADDITIONAL PLOTS #########################
+##################################### ADDITIONAL PLOTS #####################################
+
+###### Graphical abstract ###### 
+
+plot_metrics(data_datacenter_eval)
+ggsave('img/graphical_abstract.png', units='px', width = 1980, height = 1712)
 
 ###### Detailed comfort violation ######
 
