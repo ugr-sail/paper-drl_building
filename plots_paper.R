@@ -12,6 +12,8 @@
 library(readr)
 library(ggplot2)
 library(tidyverse)
+library(ggpubr)
+library(reshape2)
 
 Sys.setlocale('LC_TIME', 'C')
 
@@ -1245,13 +1247,13 @@ ggsave(
 ## Additional SAC-5Zone-hot datasets
 
 SAC_5Zone_hot_95_comfort <-
-  load_data('data_eval_tradeoff/SAC_5Zone_hot_95_comfort/progress.csv') %>%
+  load_data('data/data_eval_tradeoff/SAC_5Zone_hot_95_comfort/progress.csv') %>%
   mutate(Agent = 'SAC 95% comf.', Climate = 'Hot') %>% slice_head(n = 20)
 SAC_5Zone_hot_97_comfort <-
-  load_data('data_eval_tradeoff/SAC_5Zone_hot_97_comfort/progress.csv') %>%
+  load_data('data/data_eval_tradeoff/SAC_5Zone_hot_97_comfort/progress.csv') %>%
   mutate(Agent = 'SAC 97% comf.', Climate = 'Hot') %>% slice_head(n = 20)
 SAC_5Zone_hot_99_comfort <-
-  load_data('data_eval_tradeoff/SAC_5Zone_hot_99_comfort/progress.csv') %>%
+  load_data('data/data_eval_tradeoff/SAC_5Zone_hot_99_comfort/progress.csv') %>%
   mutate(Agent = 'SAC 99% comf.', Climate = 'Hot') %>% slice_head(n = 20)
 
 sac_comfort_weights <- rbind(
@@ -1284,13 +1286,13 @@ plot_metrics(sac_comfort_weights)
 ## Additional TD3-datacenter-cool datasets
 
 TD3_datacenter_cool_95_comfort <-
-  load_data('data_eval_tradeoff/TD3_datacenter_cool_95_comfort/progress.csv') %>%
+  load_data('data/data_eval_tradeoff/TD3_datacenter_cool_95_comfort/progress.csv') %>%
   mutate(Agent = 'TD3 95% comf.', Climate = 'Cool') %>% slice_head(n = 20)
 TD3_datacenter_cool_97_comfort <-
-  load_data('data_eval_tradeoff/TD3_datacenter_cool_97_comfort/progress.csv') %>%
+  load_data('data/data_eval_tradeoff/TD3_datacenter_cool_97_comfort/progress.csv') %>%
   mutate(Agent = 'TD3 97% comf.', Climate = 'Cool') %>% slice_head(n = 20)
 TD3_datacenter_cool_99_comfort <-
-  load_data('data_eval_tradeoff/TD3_datacenter_cool_99_comfort/progress.csv') %>%
+  load_data('data/data_eval_tradeoff/TD3_datacenter_cool_99_comfort/progress.csv') %>%
   mutate(Agent = 'TD3 99% comf.', Climate = 'Cool') %>% slice_head(n = 20)
 
 td3_comfort_weights <- rbind(
@@ -1300,7 +1302,7 @@ td3_comfort_weights <- rbind(
   TD3_datacenter_cool_95_comfort,
   TD3_datacenter_cool_97_comfort,
   TD3_datacenter_cool_99_comfort,
-  TD3_datacenter_cool_full_comfort,
+  TD3_datacenter_cool_full_comfort
 )
 
 td3_comfort_weights$Agent <- factor(
@@ -1319,3 +1321,4 @@ td3_comfort_weights$Climate <- factor(td3_comfort_weights$Climate,
                                       levels = c('Cool', 'Mixed', 'Hot'))
 
 plot_metrics(td3_comfort_weights)
+

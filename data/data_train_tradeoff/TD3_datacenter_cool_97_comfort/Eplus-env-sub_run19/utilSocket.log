@@ -1,0 +1,19 @@
+*** BCVTB client log file.
+*************************.
+Writing to socket at time = 3.153600e+07
+Assembling buffer.
+Write to socket with fd = 15
+Buffer        = 2 0 25 0 0 3.153600000000000e+07 -7.405795553196903e-01 9.200000000000000e+01 3.100000000000000e+00 2.100000000000000e+02 0.000000000000000e+00 0.000000000000000e+00 2.250000000000000e+01 2.250000000000000e+01 2.346684131918807e+01 2.042178481677228e+01 1.911019547286274e+01 0.000000000000000e+00 5.000396546459768e+00 0.000000000000000e+00 2.346684131918807e+01 2.250000000000000e+01 3.000000000000000e+01 2.999938075727703e+01 2.505989967513374e+01 1.315767403684540e+01 0.000000000000000e+00 3.115059011404466e+01 0.000000000000000e+00 2.999938075727703e+01 5.838929720313895e+03 
+
+Wrote 585 characters to socket.
+Reading from socket.
+In readbufferfromsocket: Read 121 chars, maximum is 21710.
+Disassembled buffer.
+Finished exchanging data with socket: simTimRea=3.153600e+07, flag=0.
+Assembling buffer.
+Write to socket with fd = 15
+Buffer        = 2 1 
+
+Wrote 5 characters to socket.
+sendclientmessage wrote flag 1, return value = 5.
+In readbufferfromsocket: Read 121 chars, maximum is 21710.
