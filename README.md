@@ -32,10 +32,10 @@ Read [LICENSE](https://github.com/ugr-sail/paper-drl_building/blob/main/LICENSE)
 
 ## 🪙 Funding
 
-![European Union](/logos/eu.png)
-![FEDER](/logos/feder.png)
 ![IA4TES](/logos/ia4tes.png)
 ![Junta de Andalucía](/logos/ja.png)
 ![Andalucía se mueve con Europa](/logos/and.png)
+![European Union](/logos/eu.png)
 ![Plan de Recuperación, Transformación y Resiliencia](/logos/prtr.png)
+![FEDER](/logos/feder.png)
 ![Ministerio de Ciencia, Innovación y Universidades](/logos/mciu.png)
