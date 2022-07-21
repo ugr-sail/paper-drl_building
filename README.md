@@ -26,6 +26,10 @@ _Sustainable Artificial Intelligence Lab_ ([SAIL](https://wpd.ugr.es/~sail/)).
 @article{...}
 ```
 
+## 📚 Bibliography
+
+Click [here](https://www.zotero.org/groups/4595877/drl-building/collections/2SXN93IS) to view/download the bibliography of the paper.
+
 ## 📄 License
 
 Read [LICENSE](https://github.com/ugr-sail/paper-drl_building/blob/main/LICENSE).
