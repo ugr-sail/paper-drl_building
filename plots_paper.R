@@ -40,7 +40,7 @@ plot_train_reward <- function(df) {
       linetype = Agent
     )) +
     geom_line() +
-    facet_wrap(~ Climate) +
+    facet_wrap( ~ Climate) +
     ylab('Mean reward') +
     xlab('Episode') +
     theme_bw() +
@@ -57,7 +57,7 @@ plot_metrics <- function(df, label_size = 9) {
     select('Agent', `Mean episode reward` = 'mean_reward', 'Climate') %>%
     ggplot(aes(y = `Mean episode reward`, x = Agent, col = Agent)) +
     geom_boxplot() +
-    facet_wrap( ~ Climate, scale = 'free') +
+    facet_wrap(~ Climate, scale = 'free') +
     theme_bw() +
     theme(
       axis.title.x = element_blank(),
@@ -77,7 +77,7 @@ plot_metrics <- function(df, label_size = 9) {
     select('Agent', `Power consumption (kWh)` = 'mean_power_consumption', 'Climate') %>%
     ggplot(aes(y = `Power consumption (kWh)`, x = Agent, col = Agent)) +
     geom_boxplot() +
-    facet_wrap( ~ Climate, scale = 'free') +
+    facet_wrap(~ Climate, scale = 'free') +
     theme_bw() +
     theme(
       axis.title.x = element_blank(),
@@ -97,7 +97,7 @@ plot_metrics <- function(df, label_size = 9) {
     select('Agent', `Comfort violation time (%)` = 'comfort_violation (%)', 'Climate') %>%
     ggplot(aes(y = `Comfort violation time (%)`, x = Agent, col = Agent)) +
     geom_boxplot() +
-    facet_wrap( ~ Climate, scale = 'free') +
+    facet_wrap(~ Climate, scale = 'free') +
     theme_bw() +
     theme(
       axis.title.x = element_blank(),
@@ -438,6 +438,23 @@ plot_comf_viol_datacenter <- function(df) {
       alpha = .5
     )
   # + labs(fill = '', title = 'Comfort temperature violations', subtitle = '2ZoneDataCenterHVAC - 20 episodes')
+}
+plot_mean_comf_viol <- function(df) {
+  df %>%
+    select('Agent', `Mean comfort violation (ºC)` = 'mean_comfort_violation', 'Climate') %>%
+    ggplot(aes(y = `Mean comfort violation (ºC)`, x = Agent, col = Agent)) +
+    geom_boxplot() +
+    facet_wrap(~ Climate, scale = 'free') +
+    theme_bw() +
+    scale_colour_brewer('', palette = 'Set1') +
+    theme(
+      legend.position = 'none',
+      axis.title.x = element_blank(),
+      legend.title = element_blank(),
+      strip.background = element_rect(fill = 'grey95'),
+      axis.title = element_text(size = 9)
+    )
+  # labs(title = 'Mean comfort violation during episodes')
 }
 
 ########################################## TRAIN  ##########################################
@@ -872,11 +889,11 @@ df_robustness_all %>% ggplot() + geom_boxplot(aes(y = `Mean reward`, col = Train
                       )) +
   scale_y_continuous(
     position = 'right',
-    breaks = seq(0, -0.5, -0.05),
-    sec.axis = sec_axis(~ ., breaks = NULL, name = 'Test')
+    breaks = seq(0,-0.5,-0.05),
+    sec.axis = sec_axis( ~ ., breaks = NULL, name = 'Test')
   ) +
   scale_x_continuous(breaks = NULL,
-                     sec.axis = sec_axis(~ ., breaks = NULL, name = 'Train')) +
+                     sec.axis = sec_axis( ~ ., breaks = NULL, name = 'Train')) +
   geom_hline(data = data_RBC, aes(yintercept = hline), linetype = 'dotted')
 ggsave(
   'img/robustness_test_SAC_5Zone.png',
@@ -890,7 +907,7 @@ ggsave(
 df_robustness_all %>% group_by(Train, Test) %>% summarise(mean = mean(`Mean reward`), sd =
                                                             sd(`Mean reward`))
 
-####################################### CV LEARNING ######################################## 
+####################################### CV LEARNING ########################################
 
 ## Load data
 
@@ -929,7 +946,7 @@ ggsave(
   height = 1930
 )
 
-############################## COMFORT-CONSUMPTION TRADE-OFF ############################### 
+############################## COMFORT-CONSUMPTION TRADE-OFF ###############################
 
 ## Load data
 
@@ -1079,10 +1096,15 @@ ggsave(
 
 ##################################### ADDITIONAL PLOTS #####################################
 
-###### Graphical abstract ###### 
+###### Graphical abstract ######
 
 plot_metrics(data_datacenter_eval)
-ggsave('img/graphical_abstract.png', units='px', width = 1980, height = 1712)
+ggsave(
+  'img/graphical_abstract.png',
+  units = 'px',
+  width = 1980,
+  height = 1712
+)
 
 ###### Detailed comfort violation ######
 
@@ -1159,11 +1181,11 @@ data_CV %>% ggplot() + geom_boxplot(aes(y = `Mean reward`, col = Train)) +
   ) +
   scale_y_continuous(
     position = 'right',
-    breaks = seq(-.1, -.6, -.05),
-    sec.axis = sec_axis(~ ., breaks = NULL, name = 'Test')
+    breaks = seq(-.1,-.6,-.05),
+    sec.axis = sec_axis( ~ ., breaks = NULL, name = 'Test')
   ) +
   scale_x_continuous(breaks = NULL,
-                     sec.axis = sec_axis(~ ., breaks = NULL, name = 'Train')) +
+                     sec.axis = sec_axis( ~ ., breaks = NULL, name = 'Train')) +
   geom_hline(data = data_RBC, aes(yintercept = hline), linetype = 'dotted')
 ggsave(
   'img/climates_SAC_5Zone_comparison.png',
@@ -1221,7 +1243,7 @@ data_CV_2 %>%
   select('Agent', `Mean episode reward` = 'mean_reward', 'Climate') %>%
   ggplot(aes(y = `Mean episode reward`, x = Agent, col = Agent)) +
   geom_boxplot() +
-  facet_wrap( ~ Climate, scale = 'free') +
+  facet_wrap(~ Climate, scale = 'free') +
   theme_bw() +
   theme(
     axis.title.x = element_blank(),
@@ -1278,47 +1300,14 @@ sac_comfort_weights$Agent <- factor(
     'SAC 100% comf.'
   )
 )
+
 sac_comfort_weights$Climate <- factor(sac_comfort_weights$Climate,
                                       levels = c('Cool', 'Mixed', 'Hot'))
 
-plot_metrics(sac_comfort_weights)
-
-## Additional TD3-datacenter-cool datasets
-
-TD3_datacenter_cool_95_comfort <-
-  load_data('data/data_eval_tradeoff/TD3_datacenter_cool_95_comfort/progress.csv') %>%
-  mutate(Agent = 'TD3 95% comf.', Climate = 'Cool') %>% slice_head(n = 20)
-TD3_datacenter_cool_97_comfort <-
-  load_data('data/data_eval_tradeoff/TD3_datacenter_cool_97_comfort/progress.csv') %>%
-  mutate(Agent = 'TD3 97% comf.', Climate = 'Cool') %>% slice_head(n = 20)
-TD3_datacenter_cool_99_comfort <-
-  load_data('data/data_eval_tradeoff/TD3_datacenter_cool_99_comfort/progress.csv') %>%
-  mutate(Agent = 'TD3 99% comf.', Climate = 'Cool') %>% slice_head(n = 20)
-
-td3_comfort_weights <- rbind(
-  TD3_datacenter_cool_25_comfort,
-  TD3_datacenter_cool_50_comfort,
-  TD3_datacenter_cool_75_comfort,
-  TD3_datacenter_cool_95_comfort,
-  TD3_datacenter_cool_97_comfort,
-  TD3_datacenter_cool_99_comfort,
-  TD3_datacenter_cool_full_comfort
+plot_mean_comf_viol(sac_comfort_weights)
+ggsave(
+  'img/eval_tradeoff_SAC_weights_comfort.png',
+  units = 'px',
+  width = 2551,
+  height = 1202
 )
-
-td3_comfort_weights$Agent <- factor(
-  td3_comfort_weights$Agent,
-  levels = c(
-    'TD3 25% comf.',
-    'TD3 50% comf.',
-    'TD3 75% comf.',
-    'TD3 95% comf.',
-    'TD3 97% comf.',
-    'TD3 99% comf.',
-    'TD3 100% comf.'
-  )
-)
-td3_comfort_weights$Climate <- factor(td3_comfort_weights$Climate,
-                                      levels = c('Cool', 'Mixed', 'Hot'))
-
-plot_metrics(td3_comfort_weights)
-
