@@ -72,10 +72,10 @@ plot_metrics <- function(df, label_size = 9) {
   #      title = 'Mean episode rewards',
   #      subtitle = '20 episodes evaluation') +
   
-  # Mean power consumption
+  # Mean power demand
   p2 <- df %>%
-    select('Agent', `Power consumption (kWh)` = 'mean_power_consumption', 'Climate') %>%
-    ggplot(aes(y = `Power consumption (kWh)`, x = Agent, col = Agent)) +
+    select('Agent', `Power demand (W)` = 'mean_power_consumption', 'Climate') %>%
+    ggplot(aes(y = `Power demand (W)`, x = Agent, col = Agent)) +
     geom_boxplot() +
     facet_wrap(~ Climate, scale = 'free') +
     theme_bw() +
@@ -86,10 +86,10 @@ plot_metrics <- function(df, label_size = 9) {
       strip.background = element_rect(fill = 'grey98'),
       axis.title = element_text(size = 9)
     ) +
-    labs(title = 'Mean power consumption per episode') +
+    labs(title = 'Mean power demand per episode') +
     scale_colour_brewer('', palette = 'Set1')
   # labs(fill = '',
-  #      title = 'Mean power consumption per episode',
+  #      title = 'Mean power demand per episode',
   #      subtitle = '20 episodes evaluation') +
   
   # Comfort violation time
@@ -946,7 +946,7 @@ ggsave(
   height = 1930
 )
 
-############################## COMFORT-CONSUMPTION TRADE-OFF ###############################
+############################## COMFORT-demand TRADE-OFF ###############################
 
 ## Load data
 
@@ -1264,7 +1264,7 @@ ggsave(
   height = 1485
 )
 
-###### Comfort-consumption tradeoff exceptions ######
+###### Comfort-demand tradeoff exceptions ######
 
 ## Additional SAC-5Zone-hot datasets
 
