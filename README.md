@@ -10,7 +10,7 @@ The building and construction sector -and particularly Heating, Ventilation, and
 
 ## 🔑 Keywords
 
-*Reinforcement Learning*, *Deep Reinforcement Learning*, *HVAC*, *Building Energy Optimization*, *Sinergym*
+*Reinforcement Learning*, *HVAC*, *Building Energy Optimization*, *Sinergym*
 
 ## 👥 Contributors
 
