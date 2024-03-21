@@ -907,6 +907,41 @@ ggsave(
 df_robustness_all %>% group_by(Train, Test) %>% summarise(mean = mean(`Mean reward`), sd =
                                                             sd(`Mean reward`))
 
+## Barplots
+
+df_robustness_all_2 <- df_robustness_all %>%
+  group_by(Train, Test) %>%
+  summarise(`SAC` = mean(`Mean reward`)) %>%
+  mutate(`RBC` = case_when(
+    Test == "Cool" ~ data_RBC$hline[1],
+    Test == "Mixed" ~ data_RBC$hline[2],
+    Test == "Hot" ~ data_RBC$hline[3],
+  ), Diff = `RBC` - `SAC`)
+
+df_long_rb <- df_robustness_all_2 %>% select(-Diff) %>% 
+  pivot_longer(cols = c(`SAC`, `RBC`), names_to = "Agent", values_to = "Mean ep. reward")
+
+df_long_rb %>% ggplot(aes(x=Agent, y=`Mean ep. reward`)) + 
+  geom_col(aes(fill=Agent)) + 
+   geom_text(aes(label = paste0(round(`Mean ep. reward`, 2))), 
+            position = position_stack(vjust = 0.1), color = "black", size = 2.5) +  # Añadir etiquetas
+  facet_grid(Test ~ Train, switch = 'both', scales = 'free') + 
+  theme_bw() + 
+  theme(legend.position = 'top', legend.title = element_blank(), strip.background = element_rect(fill = 'grey98'), axis.ticks.x=element_blank(), axis.text.x=element_blank()) + 
+  scale_y_continuous(
+    position = 'right',
+    breaks = c(-0, -0.1, -0.2, -0.3, -0.4),
+    sec.axis = sec_axis( ~ ., breaks = NULL, name = 'Test')
+  ) + 
+  xlab('Train')
+
+ggsave(
+  'img/robustness_test_SAC_5Zone_bars.png',
+  units = 'px',
+  width = 1800,
+  height = 1150
+)
+
 ####################################### CV LEARNING ########################################
 
 ## Load data
@@ -1192,6 +1227,41 @@ ggsave(
   units = 'px',
   width = 1900,
   height = 1500
+)
+
+## Barplots
+
+data_CV_all <- data_CV %>%
+  group_by(Train, Test) %>%
+  summarise(`SAC` = mean(`Mean reward`)) %>%
+  mutate(`RBC` = case_when(
+    Test == "Cool" ~ data_RBC$hline[1],
+    Test == "Mixed" ~ data_RBC$hline[2],
+    Test == "Hot" ~ data_RBC$hline[3],
+  ), Diff = `RBC` - `SAC`)
+
+df_long_all <- data_CV_all %>% select(-Diff) %>% 
+  pivot_longer(cols = c(`SAC`, `RBC`), names_to = "Agent", values_to = "Mean ep. reward")
+
+df_long_all %>% ggplot(aes(x=Agent, y=`Mean ep. reward`)) + 
+  geom_col(aes(fill=Agent)) + 
+   geom_text(aes(label = paste0(round(`Mean ep. reward`, 2))), 
+            position = position_stack(vjust = 0.1), color = "black", size = 2.5) +  # Añadir etiquetas
+  facet_grid(Test ~ Train, switch = 'both', scales = 'free') + 
+  theme_bw() + 
+  theme(legend.position = 'top', legend.title = element_blank(), strip.background = element_rect(fill = 'grey98'), axis.ticks.x=element_blank(), axis.text.x=element_blank()) + 
+  scale_y_continuous(
+    position = 'right',
+    breaks = c(-0, -0.1, -0.2, -0.3, -0.4),
+    sec.axis = sec_axis( ~ ., breaks = NULL, name = 'Test')
+  ) + 
+  xlab('Train')
+
+ggsave(
+  'img/climates_SAC_5Zone_comparison_bars.png',
+  units = 'px',
+  width = 1800,
+  height = 1150
 )
 
 ###### Catastrophic forgetting check ######
