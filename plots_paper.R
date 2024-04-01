@@ -4,7 +4,6 @@
 ##                                                                                        ##
 ##  Authors: A. Manjavacas, A. Campoy, J. Jimenez, M. Molina, J. Gomez                    ##
 ##                                                                                        ##
-##  Copyright (c) Antonio Manjavacas, 2022                                                ##
 ##  Contact: manjavacas@ugr.es                                                            ##
 ##                                                                                        ##
 ############################################################################################
@@ -889,7 +888,7 @@ df_robustness_all %>% ggplot() + geom_boxplot(aes(y = `Mean reward`, col = Train
                       )) +
   scale_y_continuous(
     position = 'right',
-    breaks = seq(0,-0.5,-0.05),
+    breaks = seq(0, -0.5, -0.05),
     sec.axis = sec_axis( ~ ., breaks = NULL, name = 'Test')
   ) +
   scale_x_continuous(breaks = NULL,
@@ -924,13 +923,14 @@ df_long_rb <- df_robustness_all_2 %>% select(-Diff) %>%
 df_long_rb %>% ggplot(aes(x=Agent, y=`Mean ep. reward`)) + 
   geom_col(aes(fill=Agent)) + 
    geom_text(aes(label = paste0(round(`Mean ep. reward`, 2))), 
-            position = position_stack(vjust = 0.1), color = "black", size = 2.5) +  # Añadir etiquetas
-  facet_grid(Test ~ Train, switch = 'both', scales = 'free') + 
+            position = position_stack(vjust = 0.1), color = "black", size = 2.5) + 
+  facet_grid(Test ~ Train, switch = 'both', scales = 'fixed') + 
   theme_bw() + 
-  theme(legend.position = 'top', legend.title = element_blank(), strip.background = element_rect(fill = 'grey98'), axis.ticks.x=element_blank(), axis.text.x=element_blank()) + 
+  theme(legend.position = 'top', legend.title = element_blank(), strip.background = element_rect(fill = 'grey98'), 
+        axis.ticks.x=element_blank(), axis.text.x=element_blank(), axis.text.y = element_text(size = 8)) + 
   scale_y_continuous(
     position = 'right',
-    breaks = c(-0, -0.1, -0.2, -0.3, -0.4),
+    breaks = c(-0.1, -0.25, -0.45),
     sec.axis = sec_axis( ~ ., breaks = NULL, name = 'Test')
   ) + 
   xlab('Train')
@@ -942,7 +942,7 @@ ggsave(
   height = 1150
 )
 
-####################################### CV LEARNING ########################################
+####################################### SEQ LEARNING ########################################
 
 ## Load data
 
@@ -1163,7 +1163,7 @@ ggsave(
   height = 1220
 )
 
-###### CV learning reward overview (all, cool, mixed, hot) ######
+###### SEQ learning reward overview (all, cool, mixed, hot) ######
 
 SAC_CV_cool <-
   SAC_CV_cool %>% mutate(Train = 'All', Test = 'Cool') %>%
@@ -1246,13 +1246,14 @@ df_long_all <- data_CV_all %>% select(-Diff) %>%
 df_long_all %>% ggplot(aes(x=Agent, y=`Mean ep. reward`)) + 
   geom_col(aes(fill=Agent)) + 
    geom_text(aes(label = paste0(round(`Mean ep. reward`, 2))), 
-            position = position_stack(vjust = 0.1), color = "black", size = 2.5) +  # Añadir etiquetas
-  facet_grid(Test ~ Train, switch = 'both', scales = 'free') + 
+            position = position_stack(vjust = 0.1), color = "black", size = 2.5) +
+  facet_grid(Test ~ Train, switch = 'both', scales = 'fixed') + 
   theme_bw() + 
-  theme(legend.position = 'top', legend.title = element_blank(), strip.background = element_rect(fill = 'grey98'), axis.ticks.x=element_blank(), axis.text.x=element_blank()) + 
+  theme(legend.position = 'top', legend.title = element_blank(), strip.background = element_rect(fill = 'grey98'),
+        axis.ticks.x=element_blank(), axis.text.x=element_blank(), axis.text.y = element_text(size = 8)) + 
   scale_y_continuous(
     position = 'right',
-    breaks = c(-0, -0.1, -0.2, -0.3, -0.4),
+    breaks = c(-0.1, -0.25, -0.45),
     sec.axis = sec_axis( ~ ., breaks = NULL, name = 'Test')
   ) + 
   xlab('Train')
