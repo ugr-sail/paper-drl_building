@@ -6,7 +6,7 @@ The experiments were conducted using [Sinergym](https://github.com/ugr-sail/sine
 
 ## 📖 Abstract
 
-The building and construction sector -and particularly Heating, Ventilation, and Air Conditioning (HVAC) systems- pose a significant challenge to climate change mitigation given its high impact on global energy consumption and CO2 emissions. Recent studies have addressed efficient HVAC control by employing different Deep Reinforcement Learning (DRL) algorithms, but in general they are are explicitly designed for specific setups and do not provide a standardized comparison of their performance. This paper aims to fill this gap by developing a critical and reproducible evaluation of state-of-the-art DRL algorithms applied to HVAC control in various simulated buildings and configurations. To this end, we considered several aspects of energy consumption and occupants' comfort: and took into account the performance of agents, their robustness under different conditions, their capability to adapt from simpler to more complex environments, and the trade-off between optimization goals. We used the [Sinergym](https://github.com/ugr-sail/sinergym) software, a simulation framework capable of running experiments involving multiple models and configurations. The obtained results confirm the potential of DRL algorithms, such as SAC and TD3, compared to reactive control methods, and reveal interesting insights about their generalization and learning capabilities.
+Heating, ventilation, and air conditioning (HVAC) systems are a major driver of energy consumption in commercial and residential buildings. Recent studies have shown that Deep Reinforcement Learning (DRL) algorithms can outperform traditional reactive controllers. However, DRL-based solutions are generally designed for ad hoc setups and lack standardization for comparison. To fill this gap, this paper provides a critical and reproducible evaluation, in terms of comfort and energy consumption, of several state-of-the-art DRL algorithms for HVAC control. The study examines the controllers’ robustness, adaptability, and trade-off between optimization goals by using the [Sinergym](https://github.com/ugr-sail/sinergym) framework. The results obtained confirm the potential of DRL algorithms, such as SAC and TD3, in complex scenarios and reveal several challenges related to generalization and incremental learning.
 
 ## 🔑 Keywords
 
@@ -27,12 +27,8 @@ Sustainable Artificial Intelligence Lab ([SAIL](https://wpd.ugr.es/~sail/)).
 ## 📝 Citation
 
 ```
-@article{...}
+@article{Manjavacas, A., Campoy-Nieves, A., Jiménez-Raboso, J. et al. An experimental evaluation of deep reinforcement learning algorithms for HVAC control. Artif Intell Rev 57, 173 (2024). https://doi.org/10.1007/s10462-024-10819-x}
 ```
-
-## 📚 Bibliography
-
-Click [here](https://www.zotero.org/groups/4595877/drl-building/collections/2SXN93IS) to view/download the bibliography of the paper.
 
 ## 📄 License
 
