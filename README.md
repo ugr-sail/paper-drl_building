@@ -27,7 +27,16 @@ Sustainable Artificial Intelligence Lab ([SAIL](https://wpd.ugr.es/~sail/)).
 ## 📝 Citation
 
 ```
-@article{Manjavacas, A., Campoy-Nieves, A., Jiménez-Raboso, J. et al. An experimental evaluation of deep reinforcement learning algorithms for HVAC control. Artif Intell Rev 57, 173 (2024). https://doi.org/10.1007/s10462-024-10819-x}
+@article{manjavacas2024experimental,
+  title={An experimental evaluation of deep reinforcement learning algorithms for HVAC control},
+  author={Manjavacas, Antonio and Campoy-Nieves, Alejandro and Jim{\'e}nez-Raboso, Javier and Molina-Solana, Miguel and G{\'o}mez-Romero, Juan},
+  journal={Artificial Intelligence Review},
+  volume={57},
+  number={7},
+  pages={173},
+  year={2024},
+  publisher={Springer}
+}
 ```
 
 ## 📄 License
