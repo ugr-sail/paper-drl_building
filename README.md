@@ -1,4 +1,4 @@
-![DOI](https://img.shields.io/badge/DOI-1.2.3.4)
+![DOI](https://img.shields.io/badge/DOI-10.1007/s10462-024-10819-x-blue)
 
 # An experimental evaluation of Deep Reinforcement Learning algorithms for HVAC control
 
