@@ -1,4 +1,8 @@
+![DOI](https://img.shields.io/badge/DOI-1.2.3.4)
+
 # An experimental evaluation of Deep Reinforcement Learning algorithms for HVAC control
+
+🔗 https://doi.org/10.1007/s10462-024-10819-x
 
 Supplementary material to the paper. Includes datasets, charts and additional code.
 
@@ -35,7 +39,8 @@ Sustainable Artificial Intelligence Lab ([SAIL](https://wpd.ugr.es/~sail/)).
   number={7},
   pages={173},
   year={2024},
-  publisher={Springer}
+  publisher={Springer},
+  doi={https://doi.org/10.1007/s10462-024-10819-x}
 }
 ```
 
