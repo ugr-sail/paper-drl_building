@@ -16,7 +16,7 @@ Heating, ventilation, and air conditioning (HVAC) systems are a major driver of 
 
 *Reinforcement Learning*, *HVAC*, *Building Energy Optimization*, *Sinergym*
 
-## 👥 Contributors
+## 👥 Authors
 
 * [Antonio Manjavacas](mailto:manjavacas@ugr.es)
 * [Alejandro Campoy-Nieves](mailto:alejandroac79@correo.ugr.es)
