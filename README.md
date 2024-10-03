@@ -44,10 +44,6 @@ Sustainable Artificial Intelligence Lab ([SAIL](https://wpd.ugr.es/~sail/)).
 }
 ```
 
-## 📄 License
-
-Read [LICENSE](https://github.com/ugr-sail/paper-drl_building/blob/main/LICENSE).
-
 ## 🪙 Funding
 
 ![IA4TES](/logos/ia4tes.png)
